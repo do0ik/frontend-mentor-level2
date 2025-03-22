@@ -1,3 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply font-spacemono;
+    @apply bg-basic;
+  }
+
+  /* 위 경우에는 html 태그가 없을 때는 최종 css에 들어가지 않는건지 */
+
+}
+
+@layer components {
+  .cal-label {
+    @apply text-cal-grey-400 pb-[10px];
+  }
+
+
+  .cal-input-text {
+    @apply 
+      flex rounded-md
+      bg-cal-grey-50
+      bg-no-repeat
+      bg-[16px_center]
+      outline-cal-green-400
+      caret-transparent
+      
+      text-right
+      text-cal-green-900
+      text-[24px]
+
+      px-[15px] 
+      w-full
+      h-[50px];
+
+  }
+  .cal-input-text::placeholder {
+    @apply text-cal-grey-200;
+  }
+
+
+  .cal-input-button {
+    @apply 
+      rounded-md
+      bg-cal-green-900 
+      text-cal-grey-50 
+      text-[24px] 
+
+      w-full
+      max-w-[48%]
+      desktop:max-w-[32%]
+      h-[50px] 
+
+      transition-all
+      duration-[0.3s]
+
+  }
+  .cal-input-button:hover {
+    @apply bg-cal-green-200 text-cal-green-900;
+  }
+}
